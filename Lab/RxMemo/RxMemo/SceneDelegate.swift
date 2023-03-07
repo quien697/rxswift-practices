@@ -17,6 +17,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     guard let _ = (scene as? UIWindowScene) else { return }
+    
+    // Initial scene -> Memo List
+    let sceneCoordinator = SceneCoordinator(window: window!)
+    // Using Memory Storage
+    // let storage = memoryStorage()
+    // Using Core Data Storage
+    let storage = CoreDataStorage()
+    let listViewModel = MemoListViewModel(
+      title: "My Memo",
+      sceneCoordinator: sceneCoordinator,
+      storage: storage
+    )
+    let memoListScene = Scene.list(listViewModel)
+    
+    sceneCoordinator.transition(to: memoListScene, using: .root, animated: false)
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {
