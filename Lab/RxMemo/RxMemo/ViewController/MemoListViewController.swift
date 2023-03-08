@@ -10,8 +10,9 @@ import RxSwift
 import RxCocoa
 import Action
 import NSObject_Rx
+import Foundation
 
-
+@objcMembers
 class MemoListViewController: UIViewController, ViewModelBindableType {
   
   @IBOutlet weak var tableView: UITableView!

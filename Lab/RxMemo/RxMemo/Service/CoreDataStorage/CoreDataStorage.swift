@@ -30,17 +30,14 @@ class CoreDataStorage: MemoStorageType {
   }
   
   func listMemo() -> RxSwift.Observable<[Memo]> {
-    do {
-      let request = Memo.fetchRequest() as NSFetchRequest
-      // Set the Sortoing on the request
-      let sort = NSSortDescriptor(key: "identity", ascending: true)
-      request.sortDescriptors = [sort]
-      
-      let memos = try self.context.fetch(request)
-      return Observable.just(memos)
-    } catch {
-      return Observable.error(error)
-    }
+    let request = Memo.fetchRequest() as NSFetchRequest
+    // Set the Sortoing on the request
+    let sort = NSSortDescriptor(key: "identity", ascending: true)
+    request.sortDescriptors = [sort]
+    
+    return context.rx
+      .entities(fetchRequest: request)
+      .asObservable()
   }
   
   
@@ -70,4 +67,3 @@ class CoreDataStorage: MemoStorageType {
   }
   
 }
-

@@ -17,6 +17,8 @@ extension UIViewController {
 // Responsibility: Scene Transition (Window, CurrentVC)
 class SceneCoordinator: SceneCoordinatorType {
   
+  private let bag = DisposeBag()
+  
   private var window: UIWindow
   private var currentVC: UIViewController
   
@@ -40,6 +42,13 @@ class SceneCoordinator: SceneCoordinatorType {
         subject.onError(TransitionError.navitationControllerMissing)
         break
       }
+      nav.rx.willShow
+        .subscribe(
+          onNext: { [unowned self] evt in
+            self.currentVC = evt.viewController.sceneViewController
+          }
+        )
+        .disposed(by: bag)
       nav.pushViewController(target, animated: animated)
       currentVC = target.sceneViewController
       subject.onCompleted()

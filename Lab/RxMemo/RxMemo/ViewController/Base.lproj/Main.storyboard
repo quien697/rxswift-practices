@@ -85,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="reE-7j-Vo9">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContentCell" textLabel="Iyu-fh-H9u" style="IBUITableViewCellStyleDefault" id="uhy-4Q-D8c">
@@ -136,26 +136,17 @@
                                     <barButtonItem systemItem="action" id="rJb-RX-NvG"/>
                                 </items>
                             </toolbar>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Owf-P8-aRo">
-                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                                <items>
-                                    <navigationItem title="View memo" id="gAa-gS-eg0"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5gW-oH-xuf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Owf-P8-aRo" firstAttribute="top" secondItem="5gW-oH-xuf" secondAttribute="top" id="4En-1T-UEN"/>
                             <constraint firstItem="JxL-6K-6Ge" firstAttribute="bottom" secondItem="5gW-oH-xuf" secondAttribute="bottom" id="7Dl-m8-VT1"/>
                             <constraint firstItem="reE-7j-Vo9" firstAttribute="leading" secondItem="5gW-oH-xuf" secondAttribute="leading" id="M3H-Xv-Rn9"/>
-                            <constraint firstItem="reE-7j-Vo9" firstAttribute="top" secondItem="Owf-P8-aRo" secondAttribute="bottom" id="TUf-IA-0G8"/>
                             <constraint firstItem="JxL-6K-6Ge" firstAttribute="top" secondItem="reE-7j-Vo9" secondAttribute="bottom" id="btK-xE-XJu"/>
                             <constraint firstItem="JxL-6K-6Ge" firstAttribute="trailing" secondItem="5gW-oH-xuf" secondAttribute="trailing" id="cMZ-xI-8aB"/>
-                            <constraint firstItem="Owf-P8-aRo" firstAttribute="leading" secondItem="5gW-oH-xuf" secondAttribute="leading" id="enM-wA-Git"/>
-                            <constraint firstItem="Owf-P8-aRo" firstAttribute="trailing" secondItem="5gW-oH-xuf" secondAttribute="trailing" id="fcQ-fd-bGi"/>
                             <constraint firstItem="reE-7j-Vo9" firstAttribute="trailing" secondItem="5gW-oH-xuf" secondAttribute="trailing" id="fxF-Da-BBs"/>
                             <constraint firstItem="JxL-6K-6Ge" firstAttribute="leading" secondItem="5gW-oH-xuf" secondAttribute="leading" id="hyq-9G-hKY"/>
+                            <constraint firstItem="reE-7j-Vo9" firstAttribute="top" secondItem="5gW-oH-xuf" secondAttribute="top" id="wGa-5Y-eoa"/>
                         </constraints>
                     </view>
                     <connections>
@@ -163,7 +154,6 @@
                         <outlet property="editButton" destination="b9O-Nz-LXd" id="8aK-x6-HWp"/>
                         <outlet property="shareButton" destination="rJb-RX-NvG" id="bBa-p9-pO1"/>
                         <outlet property="tableView" destination="reE-7j-Vo9" id="0QD-9O-Arm"/>
-                        <outlet property="titleNavigationItem" destination="gAa-gS-eg0" id="EPt-pT-OFy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzN-h1-QCM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

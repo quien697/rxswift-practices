@@ -13,9 +13,12 @@ import CoreData
 
 class MemoListViewModel: CommonViewModel {
  
+  
   var memoList: Observable<[Memo]> {
     return storage.listMemo()
   }
+  
+//  var momos: BehaviorSubject
   
   func perfromUpdate(memo: Memo) -> Action<String, Void> {
     return Action { input in

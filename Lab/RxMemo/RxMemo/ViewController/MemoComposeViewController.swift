@@ -22,6 +22,10 @@ class MemoComposeViewController: UIViewController, ViewModelBindableType {
     super.viewDidLoad()
   }
   
+  override func viewDidDisappear(_ animated: Bool) {
+    print(#function)
+  }
+  
   override func viewWillAppear(_ animated: Bool) {
     contentTextView.becomeFirstResponder()
   }

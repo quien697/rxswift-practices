@@ -12,7 +12,6 @@ import Action
 
 class MemoDetailViewController: UIViewController, ViewModelBindableType {
   
-  @IBOutlet weak var titleNavigationItem: UINavigationItem!
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var deleteButton: UIBarButtonItem!
   @IBOutlet weak var editButton: UIBarButtonItem!
@@ -26,7 +25,7 @@ class MemoDetailViewController: UIViewController, ViewModelBindableType {
   
   func bindViewModel() {
     viewModel.title
-      .drive(titleNavigationItem.rx.title)
+      .drive(navigationItem.rx.title)
       .disposed(by: rx.disposeBag)
     
     viewModel.contents
